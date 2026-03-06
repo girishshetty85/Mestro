@@ -1,0 +1,30 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: False
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+- tapOn: |-
+    Block Topics
+    BETA
+- assertNotVisible: Protect Your Child’s Conversations
+#- tapOn: Continue
+- assertVisible: Choose Topics You Want to Block
+
+- tapOn: Political Parties
+- assertVisible: Elections, Party's ideas, Political views
+- tapOn: Religion
+- assertVisible: Meaning,Sacred Texts,Festival,Worship places
+- tapOn: Meaning,Sacred Texts,Festival,Worship places
+- tapOn: Block
+- tapOn: |-
+    Religion
+    1
+- tapOn: Meaning,Sacred Texts,Festival,Worship places
+- tapOn: Yes, Unblock

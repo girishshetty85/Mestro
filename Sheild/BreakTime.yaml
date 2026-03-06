@@ -1,0 +1,32 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: False
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+- scrollUntilVisible:
+    element:
+      text: Set Bedtime
+
+- tapOn: Set Bedtime
+
+
+- longPressOn:
+    id: kids_usage_bedtime_switch
+- tapOn: Confirm
+- swipe:
+    from:
+      text: 00:30
+      index: 1
+    direction: UP
+- tapOn: Save Changes
+
+
+
+

@@ -1,0 +1,22 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: false
+
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+
+- tapOn: Lock Kids Zone
+- assertVisible: |-
+    Lock/Unlock all apps
+    This empowers you to secure the Miko Kids Zone on their child's device at any given time by preventing access and promoting responsible use. It provides added control and safety measures.
+- tapOn: Lock talent switch icon
+- assertVisible: Lock app
+- tapOn: Lock app
+- tapOn: Lock talent switch icon

@@ -1,0 +1,16 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: false
+- tapOn: Control & Settings
+
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+
+- assertVisible: |-
+    RAJES
+    girish.shetty+betrr01@miko.ai
+
+    

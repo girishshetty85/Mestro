@@ -1,0 +1,19 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: false
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+- tapOn: Manage Usage
+- assertVisible: |-
+    Break reminder
+    Remind child to take breaks
+- assertVisible: |-
+    Daily usage
+    Set time limits on daily usage

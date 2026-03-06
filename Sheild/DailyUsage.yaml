@@ -1,0 +1,38 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: false
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+- tapOn: Manage Usage
+- assertVisible: |-
+    Break reminder
+    Remind child to take breaks
+- assertVisible: |-
+    Daily usage
+    Set time limits on daily usage
+
+- doubleTapOn:
+    id: id_manage_usage_daily_usage
+    delay: 100
+- assertVisible: |-
+    Daily Usage Limit
+    Manage the time your child spends with Miko or the app by setting a limit. Once the limit is reached, usage will automatically pause until the next day.
+    Once saved, restart Miko to apply the changes.
+- longPressOn:
+    id: id_manage_daily_usage_switch
+- tapOn: Save Changes
+- longPressOn:
+    id: id_manage_daily_usage_switch
+
+
+
+
+
+

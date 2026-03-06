@@ -1,0 +1,28 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: False
+
+- tapOn: Parents Zone
+
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+
+- tapOn: |-
+    Blog
+    Tab 5 of 5
+
+- tapOn: |-
+    For Kids
+    Tab 1 of 3
+
+
+- tapOn: |-
+    For Parents
+    Tab 2 of 3
+- tapOn: |-
+    Controls and Safety
+    Tab 3 of 3
+

@@ -1,0 +1,28 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: false
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+- scrollUntilVisible:
+    element:
+      text: Daily Rewards
+
+- assertVisible: Daily Rewards
+- tapOn: Daily Rewards
+- assertVisible: |-
+    Lock/Unlock Daily Rewards for Miko3
+    Please note
+    •   
+    Daily rewards allow your child to earn gems for visiting Miko each day. You can turn this feature on or off at any time.
+    •   
+    Turning off daily rewards does not limit access to Miko’s activities. It only pauses gem rewards.
+
+
+

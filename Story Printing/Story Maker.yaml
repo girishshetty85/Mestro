@@ -1,0 +1,35 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: false
+
+
+- tapOn: Parents Zone
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- scrollUntilVisible:
+    element:
+      text: |-
+         Storybook Library
+         Create stories with Miko
+         Spark creativity using Story Maker
+
+# - doubleTapOn:
+    # point: 8%,52%
+
+# - scrollUntilVisible:
+    # element:
+      # text: View all book
+
+- scrollUntilVisible:
+    element:
+      text: All Miko Content
+
+
+
+
+
+
+

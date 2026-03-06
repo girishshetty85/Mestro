@@ -1,0 +1,56 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: False
+
+- tapOn: Parents Zone
+
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+
+- assertVisible:
+    id: id_app_bar_profile
+
+- doubleTapOn:
+    id: id_app_bar_profile
+    delay: 100
+
+- longPressOn: |-
+    Miko MAX Subscription
+    1st  April 2026
+
+- assertVisible: Cancel Subscription
+- tapOn: Cancel Subscription
+
+- scrollUntilVisible:
+    element:
+      text: Proceed to cancel
+
+- assertVisible: Proceed to cancel
+- assertVisible: No I’ll keep the subscription
+- tapOn: Proceed to cancel
+- assertVisible: We’re sad to see you go!
+- assertVisible: Issues with Miko
+- assertVisible: Costly
+- assertVisible: My child didn't get time to use MAX
+- assertVisible: My child didn't like MAX content
+- assertVisible: Content is not useful
+- doubleTapOn: Other
+- assertVisible: Please specify the reason here...
+- tapOn: h
+- tapOn: g
+- tapOn: t
+- tapOn: t
+- tapOn: t
+- tapOn: t
+- tapOn: t
+- tapOn: k
+- tapOn: u
+- tapOn: t
+- doubleTapOn:
+    id: 0_resource_name_obfuscated
+    index: 47
+    delay: 100
+- assertVisible: Proceed

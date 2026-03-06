@@ -1,0 +1,34 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: False
+- tapOn: Miko Shield
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- assertVisible: |-
+    Miko Shield
+    Your rules. Their world. Perfectly balanced.
+
+- tapOn: |-
+    AI Conversations
+    BETA
+
+
+- assertVisible: |-
+    Manage AI Conversations
+    Please note
+    •   
+    Choose whether your child can have AI-powered conversations with Miko.
+    •   
+    In AI-powered conversations, children can create stories, explore topics like animals, space, oceans, and history, and share ideas through conversation. These interactions are designed with child safety in mind.
+    •   
+    When AI-powered conversations are blocked, your child can still enjoy stories, music, dance, and other guided experiences.
+    •   
+    You can change this setting anytime as your child’s needs grow and change.
+- longPressOn:
+    point: 86%,11%
+- longPressOn:
+    point: 86%,11%
+

@@ -1,0 +1,27 @@
+appId: com.miko3.app
+---
+- launchApp:
+    clearState: False
+
+- tapOn: Parents Zone
+
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+- tapOn: "0"
+
+- assertVisible:
+    id: id_app_bar_profile
+
+- doubleTapOn:
+    id: id_app_bar_profile
+    delay: 100
+
+- longPressOn: |-
+    Miko MAX Subscription
+    1st  April 2026
+
+- assertVisible: Manage Max subscription
+
+- assertVisible: Change subscription plan
+- assertVisible: Cancel Subscription
