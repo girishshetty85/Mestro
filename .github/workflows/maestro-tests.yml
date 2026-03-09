@@ -16,10 +16,13 @@ jobs:
       - name: Install Maestro
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> $GITHUB_PATH
+
+      - name: Verify Maestro
+        run: maestro --version
 
       - name: Run Maestro Tests
-        run: |
-          maestro test flows --format junit --output report.xml
+        run: maestro test flows --format junit --output report.xml
 
       - name: Upload Report
         uses: actions/upload-artifact@v4
