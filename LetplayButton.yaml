@@ -2,7 +2,7 @@ appId: com.miko3.app
 ---
 - launchApp
 
-- assertVisible:
+- assertVisible: 
     text: "Let’s Play"
     tolerance:
       - takeScreenshot: "Let’s_Play_Failed"
