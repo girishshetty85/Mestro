@@ -1,0 +1,28 @@
+name: Maestro Mobile Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  maestro-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Maestro
+        run: |
+          curl -Ls "https://get.maestro.mobile.dev" | bash
+
+      - name: Run Maestro Tests
+        run: |
+          maestro test flows --format junit --output report.xml
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: maestro-report
+          path: report.xml
