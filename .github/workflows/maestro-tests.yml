@@ -14,34 +14,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
       - name: Install Maestro
         run: |
-          curl -Ls "https://get.maestro.mobile/install.sh" | bash
-          echo "$HOME/.maestro/bin" >> $GITHUB_PATH
+          brew tap mobile-dev-inc/tap
+          brew install maestro
+          echo "Maestro installed successfully"
 
-      - name: Verify Maestro
+      - name: Verify Maestro Installation
         run: maestro --version
 
       - name: Run Clock Tests
-        run: maestro test Clock.yaml --format junit --output clock-report.xml
+        run: maestro test Clock.yaml
         continue-on-error: true
 
       - name: Run VerifyUsername Tests
-        run: maestro test VerifyUsername.yaml --format junit --output verify-username-report.xml
+        run: maestro test VerifyUsername.yaml
         continue-on-error: true
 
       - name: Run Reporting Tests
-        run: maestro test Reporting.yaml --format junit --output reporting-report.xml
+        run: maestro test Reporting.yaml
         continue-on-error: true
 
       - name: Run loginName Tests
-        run: maestro test loginName.yaml --format junit --output loginname-report.xml
+        run: maestro test loginName.yaml
         continue-on-error: true
-
-      - name: Upload Reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: maestro-reports
-          path: |
-            *-report.xml
