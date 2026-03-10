@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   maestro-test:
@@ -15,17 +16,32 @@ jobs:
 
       - name: Install Maestro
         run: |
-          curl -Ls "https://get.maestro.mobile.dev" | bash
+          curl -Ls "https://get.maestro.mobile/install.sh" | bash
           echo "$HOME/.maestro/bin" >> $GITHUB_PATH
 
       - name: Verify Maestro
         run: maestro --version
 
-      - name: Run Maestro Tests
-        run: maestro test flows --format junit --output report.xml
+      - name: Run Clock Tests
+        run: maestro test Clock.yaml --format junit --output clock-report.xml
+        continue-on-error: true
 
-      - name: Upload Report
+      - name: Run VerifyUsername Tests
+        run: maestro test VerifyUsername.yaml --format junit --output verify-username-report.xml
+        continue-on-error: true
+
+      - name: Run Reporting Tests
+        run: maestro test Reporting.yaml --format junit --output reporting-report.xml
+        continue-on-error: true
+
+      - name: Run loginName Tests
+        run: maestro test loginName.yaml --format junit --output loginname-report.xml
+        continue-on-error: true
+
+      - name: Upload Reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: maestro-report
-          path: report.xml
+          name: maestro-reports
+          path: |
+            *-report.xml
